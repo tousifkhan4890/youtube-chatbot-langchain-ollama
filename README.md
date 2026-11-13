@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎬 YouTube ChatBot using LangChain
+#  YouTube ChatBot using LangChain
 
 **Chat with any YouTube video. Private, free, and 100% local.**
 
@@ -18,13 +18,13 @@ No API keys. No cloud. Your data never leaves your machine.
 
 ---
 
-## 📸 Demo
+##  Demo
 
 ![YouTube ChatBot screenshot](assets/screenshot.png)
 
 ---
 
-## 📑 Table of contents
+##  Table of contents
 
 - [Overview](#-overview)
 - [Features](#-features)
@@ -46,7 +46,7 @@ No API keys. No cloud. Your data never leaves your machine.
 
 ---
 
-## 🧠 Overview
+##  Overview
 
 **YouTube ChatBot** lets you paste a YouTube link and ask questions about the video in plain language.
 It reads the video's English captions, splits them into chunks, converts them into vector embeddings,
@@ -57,16 +57,16 @@ and no data is sent to external AI services.
 
 ## ✨ Features
 
-- 🔗 **Paste any YouTube link**: standard, `youtu.be`, shorts and embed links are all cleaned automatically
-- 🤖 **100% local AI**: chat model `qwen2.5:7b` and embeddings `nomic-embed-text` through Ollama
-- 💸 **Zero cost**: no OpenAI or other paid API key required
-- 🔒 **Private**: video content and questions stay on your machine
-- 🎯 **Grounded answers**: the bot answers only from the video; if the answer isn't there, it says it doesn't know
-- 📄 **Source transparency**: each answer comes with an expandable *Sources used* section
-- ⏳ **Polished UX**: animated loading state, clean ready message, dark glass-style interface
-- 🧱 **Chain-based design**: built with LangChain Runnables (`RunnableParallel`, `|` pipe syntax)
+-  **Paste any YouTube link**: standard, `youtu.be`, shorts and embed links are all cleaned automatically
+-  **100% local AI**: chat model `qwen2.5:7b` and embeddings `nomic-embed-text` through Ollama
+-  **Zero cost**: no OpenAI or other paid API key required
+-  **Private**: video content and questions stay on your machine
+-  **Grounded answers**: the bot answers only from the video; if the answer isn't there, it says it doesn't know
+-  **Source transparency**: each answer comes with an expandable *Sources used* section
+-  **Polished UX**: animated loading state, clean ready message, dark glass-style interface
+-  **Chain-based design**: built with LangChain Runnables (`RunnableParallel`, `|` pipe syntax)
 
-## 🏗 Architecture
+##  Architecture
 
 ```mermaid
 flowchart LR
@@ -83,7 +83,7 @@ flowchart LR
     J --> K[Answer + Sources]
 ```
 
-## 🛠 Tech stack
+##  Tech stack
 
 | Layer | Technology |
 |---|---|
@@ -96,7 +96,7 @@ flowchart LR
 | Frontend | Streamlit with custom CSS |
 | Language | Python 3.10+ |
 
-## ✅ Prerequisites
+##  Prerequisites
 
 - **Python 3.10 or newer**
 - **[Ollama](https://ollama.com/download)** installed and running
@@ -104,7 +104,7 @@ flowchart LR
 - An **internet connection** for the first run (to download packages and fetch captions)
 - A YouTube video with **English captions** (look for the **CC** button)
 
-## 🚀 Installation
+##  Installation
 
 **1. Clone the repository**
 
@@ -144,7 +144,7 @@ Check that both are installed:
 ollama list
 ```
 
-## ▶️ Usage
+##  Usage
 
 1. Make sure Ollama is running (open the Ollama app or run `ollama serve`).
 2. Start the app:
@@ -166,7 +166,7 @@ ollama list
 
 > Tip: specific questions give better answers than broad ones like "summarize everything".
 
-## 📁 Project structure
+##  Project structure
 
 ```
 youtube-chatbot-langchain-ollama/
@@ -182,7 +182,7 @@ youtube-chatbot-langchain-ollama/
 └── README.md              # Project documentation
 ```
 
-## ⚙️ How it works
+##  How it works
 
 1. **Ingestion**: `YoutubeLoader` downloads the English captions of the video.
 2. **Splitting**: `RecursiveCharacterTextSplitter` cuts the text into 1000-character chunks with 200 characters of overlap so context isn't lost at the edges.
@@ -202,7 +202,7 @@ parallel_chain = RunnableParallel({
 main_chain = parallel_chain | prompt | llm | StrOutputParser()
 ```
 
-## 🔧 Configuration
+##  Configuration
 
 Edit these values in `build_chain()` inside `app.py`:
 
@@ -218,7 +218,7 @@ Edit these values in `build_chain()` inside `app.py`:
 
 To change the background, replace `background.jpg` with your own image.
 
-## 🩺 Troubleshooting
+##  Troubleshooting
 
 | Problem | Likely cause | Fix |
 |---|---|---|
@@ -230,14 +230,14 @@ To change the background, replace `background.jpg` with your own image.
 | `pip` download times out | Weak connection | `pip install -r requirements.txt --default-timeout=200 --retries 10` |
 | Streamlit command not found | Virtual environment not active | Activate `venv` first |
 
-## ⚠️ Limitations
+##  Limitations
 
 - Works only with videos that have **English captions**.
 - Answers depend on the 4 retrieved chunks, so very broad questions (like a full summary of a long video) can be incomplete.
 - There is no conversation memory yet; each question is answered independently.
 - Speed depends on your hardware because the model runs locally.
 
-## 🗺 Roadmap
+##  Roadmap
 
 - [ ] Conversation memory so follow-up questions work
 - [ ] Support for more caption languages
@@ -246,7 +246,7 @@ To change the background, replace `background.jpg` with your own image.
 - [ ] Download chat as text or PDF
 - [ ] Suggested question buttons
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome.
 
@@ -256,17 +256,17 @@ Contributions are welcome.
 4. Push the branch: `git push origin feature/your-feature`
 5. Open a Pull Request
 
-## 📄 License
+##  License
 
 Distributed under the MIT License. See [`LICENSE`](LICENSE) for details.
 
-## 👤 Author
+##  Author
 
 **Tousif Khan**
 
 - GitHub: [@tousifkhan4890](https://github.com/tousifkhan4890)
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Built while learning Generative AI through the CampusX GenAI course
 - [LangChain](https://www.langchain.com/), [Ollama](https://ollama.com/), [FAISS](https://github.com/facebookresearch/faiss) and [Streamlit](https://streamlit.io/) for the open-source tools that make this possible
