@@ -55,7 +55,7 @@ and retrieves the most relevant parts to answer your question with a local langu
 Everything runs on your own computer using [Ollama](https://ollama.com), so there are no API costs
 and no data is sent to external AI services.
 
-## ✨ Features
+##  Features
 
 -  **Paste any YouTube link**: standard, `youtu.be`, shorts and embed links are all cleaned automatically
 -  **100% local AI**: chat model `qwen2.5:7b` and embeddings `nomic-embed-text` through Ollama
